@@ -31,8 +31,6 @@ genSuccessHandler = function(res) {
 };
 
 app.get('/doi2bib', function(req, res) {
-  res.set('Content-Type', 'application/x-bibtex');
-
   if (!/^10\..+\/.+$/.test(req.query.id)) {
     res.writeHead(400);
     res.end('Invalid DOI');
@@ -42,9 +40,6 @@ app.get('/doi2bib', function(req, res) {
 });
 
 app.get('/pmid2bib', function(req, res) {
-  res.set('Content-Type', 'application/x-bibtex');
-
-
   if (!/^\d+$|^PMC\d+(\.\d+)?$/.test(req.query.id)) {
     res.writeHead(400);
     res.end('Invalid PMID');
@@ -58,7 +53,6 @@ app.get('/pmid2bib', function(req, res) {
 });
 
 app.get('/arxivid2bib', function(req, res) {
-  res.set('Content-Type', 'application/x-bibtex');
   if (!/^\d+\.\d+(v(\d+))?$/.test(req.query.id)) {
     res.writeHead(400);
     res.end('Invalid arXiv ID');
