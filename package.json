@@ -52,6 +52,7 @@
   "private": true,
   "main": "app/server.js",
   "scripts": {
-    "test": "gulp test"
+      "test": "gulp test",
+      "start": "node app/server.js"
   }
 }
